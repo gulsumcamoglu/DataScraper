@@ -3,7 +3,7 @@
 
 
 {% block title %}
-  Data Scraper
+  Products
 {% endblock title %}
   
 
@@ -14,9 +14,13 @@
 
 {% for i in products %}
 <div class="card text-dark bg-light mb-3">
-  <div class="card-header">{{products.name|safe}}</div>
+  <div class="card-header">
+    <a href="{% url 'productDetail' slug=i.slug %}">
+      {{i.name|safe}}
+    </a>
+  </div>
   <div class="card-body">
-   <img src="{{products.img|safe}}" alt="">  
+   <p >{{i.img}}</p>  
   </div>
 </div>
 {% empty %}

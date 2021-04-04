@@ -1,4 +1,5 @@
 from django.db import models
+from autoslug import AutoSlugField
 
 
 
@@ -6,7 +7,8 @@ from django.db import models
 class ProductModel(models.Model):
     name   = models.CharField(max_length=70, blank=False,null=False)
     img    = models.CharField(max_length=70, blank=False,null=False)
-    price  = models.FloatField(max_length=100,null=False)
+    price  = models.CharField(max_length=20,null=False)
+    slug = AutoSlugField(populate_from = 'name', unique=True)
 
     
 

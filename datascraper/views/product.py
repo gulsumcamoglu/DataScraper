@@ -3,7 +3,7 @@ from datascraper.models import ProductModel
 from django.core.paginator import Paginator
 
 def product(request):
-    products = [1,2,3,4]
+    products =ProductModel.objects.all()
     page = request.GET.get('page')
     paginator = Paginator(products,2)
 
