@@ -4,6 +4,6 @@ from datascraper.views import product,input
 
 
 urlpatterns = [
-    path('',input),
-    path('product',product),
+    path('',input,name = 'input'),
+    path('product',product, name = 'product'),
 ]
